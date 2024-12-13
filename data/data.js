@@ -1,8 +1,8 @@
 const data = [
     {
         filename: "carlsbad_0.jpg",
-        yaw: 0,
-        pitch: 0,
+        yaw: 0.009621012850468347, 
+        pitch: 0.5,
         hotspots: [ 
             {
             yaw: 0,
