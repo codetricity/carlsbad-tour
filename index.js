@@ -5,17 +5,15 @@ const viewer = new Marzipano.Viewer(document.getElementById("pano"));
 const geometry = new Marzipano.EquirectGeometry([{ width: 7296 }]);
 
 let scenes = [];
-
+ // Create view.
+ let view = new Marzipano.RectilinearView();
 for (let i = 0; i < data.length; i++) {
   let image = data[0];
   // Create source.
   let source = Marzipano.ImageUrlSource.fromString(`images/${image.filename}`);
 
-  // Create view.
-  let view = new Marzipano.RectilinearView({
-    yaw: image.yaw,
-    pitch: image.pitch,
-  });
+    view.yaw = image.yaw;
+    view.pitch = image.pitch;
 
   // Create scene.
   let scene = viewer.createScene({
@@ -24,21 +22,70 @@ for (let i = 0; i < data.length; i++) {
     view: view,
   });
 
-  if (image.hasOwnProperty('hotspots')) {
+  if (image.hasOwnProperty("hotspots")) {
     let hotspots = image.hotspots;
 
-    // Create a hotspot element
-    let hotspotElement = document.createElement("div");
-    hotspotElement.classList.add("hotspot");
-    hotspotElement.innerHTML = `<img src="icons/${hotspots[0].icon}" class="hotspot-icon">`;
+    for (let hsi = 0; hsi < hotspots.length; hsi++) {
+      // Create a hotspot element
+      let hotspot = hotspots[hsi];
+      let hotspotElement = document.createElement("div");
+      hotspotElement.classList.add("hotspot");
+      hotspotElement.innerHTML = `<img src="icons/${hotspot.icon}" class="hotspot-icon">`;
 
-    // Define the hotspot's position
-    let hotspotPosition = { yaw: 0, pitch: 0 };
+      // Define the hotspot's position
+      let hotspotPosition = { yaw: hotspot.yaw, pitch: hotspot.pitch };
 
-    // Create the hotspot
-    scene.hotspotContainer().createHotspot(hotspotElement, hotspotPosition);
-  } 
+      // Create the hotspot
+      scene.hotspotContainer().createHotspot(hotspotElement, hotspotPosition);
+    }
+  }
   scenes.push(scene);
 }
 // Display scene.
 scenes[0].switchTo();
+
+// Add an event listener for mouse click
+document.getElementById("pano").addEventListener("mousedown", function (event) {
+  document.body.style.cursor = "move";
+  let longClickTimeout;
+  longClickTimeout = setTimeout(function () {
+    console.log("Long click detected!");
+
+    // Get the DOM element for the viewer
+    var element = viewer.domElement();
+    var rect = element.getBoundingClientRect();
+
+    // Calculate relative pointer coordinates
+    var relativeX = event.clientX - rect.left;
+    var relativeY = event.clientY - rect.top;
+
+    // Convert to normalized coordinates (0 to 1)
+    var x = relativeX / rect.width;
+    var y = relativeY / rect.height;
+
+    // Use the correct method: screenToCoordinates
+    var result = view.screenToCoordinates({ x: relativeX, y: relativeY });
+
+    if (result) {
+      console.log("Yaw:", result.yaw, "Pitch:", result.pitch);
+      alert(
+        `Selected point is now in clipboard:\nYaw: ${result.yaw}, Pitch: ${result.pitch}`
+      );
+      navigator.clipboard.writeText(
+        `yaw: ${result.yaw}, pitch: ${result.pitch}`
+      );
+    } else {
+      console.log("Pointer is outside the view bounds.");
+    }
+  }, 4000);
+  // Clear the timer on mouseup or mouseout to prevent long click
+  function clearLongClick() {
+    clearTimeout(longClickTimeout);
+    document.removeEventListener("mouseup", clearLongClick);
+    document.removeEventListener("mouseout", clearLongClick);
+    document.body.style.cursor = "default";
+  }
+
+  document.addEventListener("mouseup", clearLongClick);
+  document.addEventListener("mouseout", clearLongClick);
+});

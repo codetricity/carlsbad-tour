@@ -7,6 +7,8 @@ Using [simple-marzipano-point-tool](https://github.com/codetricity/simple-marizi
 For initial view, placing mouse in center of screen gives the center
 of the view.
 
+For the hotspot, the mouse is in the upper right corner.
+
 ## images
 
 Photostream
