@@ -7,13 +7,13 @@ const data = [
       {
         yaw: -0.8043556272753545, 
         pitch: -0.10639414611516074,
-        switchTo: 2,
+        switchTo: 1,
         icon: "up.png",
       },
       {
         yaw: -2.516364104163955, 
         pitch: -0.061567426856314,
-        switchTo: 3,
+        switchTo: 2,
         icon: "up_left.png",
       }
     ],
@@ -28,6 +28,12 @@ const data = [
         pitch: 0,
         switchTo: 2,
         icon: "up.png",
+      },
+      {
+        yaw: -1,
+        pitch: 0,
+        switchTo: 0,
+        icon: "down.png",
       },
     ],
   },

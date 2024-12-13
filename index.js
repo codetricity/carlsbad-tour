@@ -5,15 +5,15 @@ const viewer = new Marzipano.Viewer(document.getElementById("pano"));
 const geometry = new Marzipano.EquirectGeometry([{ width: 7296 }]);
 
 let scenes = [];
- // Create view.
- let view = new Marzipano.RectilinearView();
+// Create view.
+let view = new Marzipano.RectilinearView();
 for (let i = 0; i < data.length; i++) {
-  let image = data[0];
+  let image = data[i];
   // Create source.
   let source = Marzipano.ImageUrlSource.fromString(`images/${image.filename}`);
 
-    view.yaw = image.yaw;
-    view.pitch = image.pitch;
+  view.yaw = image.yaw;
+  view.pitch = image.pitch;
 
   // Create scene.
   let scene = viewer.createScene({
@@ -34,7 +34,13 @@ for (let i = 0; i < data.length; i++) {
 
       // Define the hotspot's position
       let hotspotPosition = { yaw: hotspot.yaw, pitch: hotspot.pitch };
-
+      // Add a click event listener to the hotspot
+      hotspotElement.addEventListener("click", function () {
+        // Switch to the new scene
+        console.log(`hotspot links to scene ${hotspot.switchTo}`);
+        console.log(scenes[hotspot.switchTo]);
+        scenes[hotspot.switchTo].switchTo();
+      });
       // Create the hotspot
       scene.hotspotContainer().createHotspot(hotspotElement, hotspotPosition);
     }
