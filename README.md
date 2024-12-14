@@ -113,8 +113,46 @@ Photostream
 
 ## future
 
+### performance optimization
+
 * replace equirectangular with cubemap and explain difference
-* revise data format
+* multiresolution loading
+* optimize image loading
+
+### editing
+
+* move from mouse long-press to editor mode button
 * use Marzipano Tool again for ideas
   * build a subset as open source
-* optimize image loading
+
+### data standardization
+
+* revise data format with Marzipano Tool as a reference.
+
+### Develop strategy for auto-placement of view and yaw
+
+RICOH THETA metadata has these fields:
+
+* PoseHeadingDegrees = 236.5
+* PosePitchDegrees = 0.0
+* PoseRollDegrees = 0.0
+
+Pitch and roll are disabled due to auto-leveling.
+
+![camera axis](readme_assets/camera-axis.png)
+
+When the THETA X GPS unit is enabled, these fields
+are also available.
+
+![GPS data](readme_assets/gps.png)
+
+Metadata information is [available on GitHub](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md).
+
+Video CaMM data extraction.
+
+`exiftool -ee -V3 path/to/your/video.MP4 > path/to/results.txt`
+
+#### CaMM data community discussions
+
+* [IMU Data Libraries](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md)
+* [RICOH THETA Z1 Firmware 3.01.1 - Adds Single-Fisheye, simultaneous recording of 2 videos, 50min video length](https://community.theta360.guide/t/ricoh-theta-z1-firmware-3-01-1-adds-single-fisheye-simultaneous-recording-of-2-videos-50min-video-length/9095?u=craig)
