@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     filename: "carlsbad_0.jpg",
     yaw: 0.009621012850468347,
