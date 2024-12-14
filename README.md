@@ -4,7 +4,7 @@
 
 [live site](https://codetricity.github.io/carlsbad-tour/)
 
-[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  The open source viewer is used in [Marzipano tool], which is closed source.
+[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  The open source viewer is used in [Marzipano tool](https://www.marzipano.net/tool/), which is closed source.
 
 This assessment is for people thinking of building their
 own virtual tour software for use cases such as:
@@ -28,6 +28,10 @@ The primary learning focus is on these concepts:
 * pitch and yaw of image and hotspots
 * basic Marzipano concepts such as geometry, limit, view, scene
 * UI interaction to get pitch and yaw information needed to build the tour
+
+Marzipano is only the 360 image viewer.  However, as it is used
+in Marzipano Tool, it is a good reference to build your own
+virtual tour software.
 
 ## data format
 
@@ -124,7 +128,8 @@ Photostream
 * move from mouse long-press to editor mode button
 * use Marzipano Tool again for ideas
   * build a subset as open source
-* write data to downloadable file, possibly using something like Flask
+* write data to downloadable file
+* based on [this discussion](https://groups.google.com/g/marzipano/c/6EF6Q_37aMo/m/DYVM-r1PAQAJ), it's possible to run Marzipano locally
 
 ### data standardization
 
@@ -157,3 +162,11 @@ Video CaMM data extraction.
 
 * [IMU Data Libraries](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md)
 * [RICOH THETA Z1 Firmware 3.01.1 - Adds Single-Fisheye, simultaneous recording of 2 videos, 50min video length](https://community.theta360.guide/t/ricoh-theta-z1-firmware-3-01-1-adds-single-fisheye-simultaneous-recording-of-2-videos-50min-video-length/9095?u=craig)
+
+## Running Marzipano Tool Locally
+
+Marzipano Tool is build on Marzipano.
+
+Run a web server locally such as `python -m http.server`
+
+![marzipano tool local](readme_assets/marzipano-tool-local.png)
