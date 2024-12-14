@@ -4,7 +4,11 @@
 
 [live site](https://codetricity.github.io/carlsbad-tour/)
 
-[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  The open source viewer is used in [Marzipano tool](https://www.marzipano.net/tool/), which is closed source.
+If you want to build a virtual tour, do not use this repo.  Use the free [Marzipano tool](https://www.marzipano.net/tool/), which is closed source.
+
+I wanted to learn more about how to build virtual tour software.
+
+[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  
 
 This assessment is for people thinking of building their
 own virtual tour software for use cases such as:
