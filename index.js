@@ -6,14 +6,13 @@ const geometry = new Marzipano.EquirectGeometry([{ width: 7296 }]);
 
 let scenes = [];
 // Create view.
-let view = new Marzipano.RectilinearView();
+let view;
 for (let i = 0; i < data.length; i++) {
   let image = data[i];
   // Create source.
   let source = Marzipano.ImageUrlSource.fromString(`images/${image.filename}`);
-
-  view.yaw = image.yaw;
-  view.pitch = image.pitch;
+  console.log(`image ${i} - setting yaw to ${image.yaw}`);
+  view = new Marzipano.RectilinearView({yaw: image.yaw, pitch: image.pitch});
 
   // Create scene.
   let scene = viewer.createScene({
@@ -39,6 +38,7 @@ for (let i = 0; i < data.length; i++) {
         // Switch to the new scene
         console.log(`hotspot links to scene ${hotspot.switchTo}`);
         console.log(scenes[hotspot.switchTo]);
+        
         scenes[hotspot.switchTo].switchTo();
       });
       // Create the hotspot
@@ -50,6 +50,8 @@ for (let i = 0; i < data.length; i++) {
 // Display scene.
 scenes[0].switchTo();
 
+// add a way to get the coordinates of a point for editing
+// the tour
 // Add an event listener for mouse click
 document.getElementById("pano").addEventListener("mousedown", function (event) {
   document.body.style.cursor = "move";
