@@ -24,10 +24,9 @@ const data = [
     pitch: -0.045045980667676844,
     hotspots: [
       {
-        yaw: 0,
-        pitch: 0,
+        yaw: -1.976784891140511, pitch: -0.07994811763550302,
         switchTo: 2,
-        icon: "up.png",
+        icon: "up_right.png",
       },
       {
         yaw: 3.14,
@@ -43,10 +42,9 @@ const data = [
     pitch: 0.401606669855024,
     hotspots: [
       {
-        yaw: 0,
-        pitch: 0,
+        yaw: 0.9311517715276967, pitch: -0.11795110277877896,
         switchTo: 3,
-        icon: "up.png",
+        icon: "right.png",
       },
       {
         yaw: 3.14,
@@ -62,8 +60,7 @@ const data = [
     pitch: 0.4217199986685749,
     hotspots: [
       {
-        yaw: 0,
-        pitch: 0,
+        yaw: 1.7838758916682522, pitch: 0.015055097137512519,
         switchTo: 4,
         icon: "up.png",
       },
@@ -82,8 +79,7 @@ const data = [
     pitch: 0,
     hotspots: [
       {
-        yaw: 0,
-        pitch: 0,
+        yaw: -2.433150958334945, pitch: 0.06719558123590019,
         switchTo: 5,
         icon: "up.png",
       },

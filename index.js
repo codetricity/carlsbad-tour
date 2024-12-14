@@ -5,14 +5,17 @@ const viewer = new Marzipano.Viewer(document.getElementById("pano"));
 const geometry = new Marzipano.EquirectGeometry([{ width: 7296 }]);
 
 let scenes = [];
-// Create view.
-let view;
+let currentView = null; // Track the active view
+
 for (let i = 0; i < data.length; i++) {
   let image = data[i];
   // Create source.
   let source = Marzipano.ImageUrlSource.fromString(`images/${image.filename}`);
   console.log(`image ${i} - setting yaw to ${image.yaw}`);
-  view = new Marzipano.RectilinearView({yaw: image.yaw, pitch: image.pitch});
+  let view = new Marzipano.RectilinearView({
+    yaw: image.yaw,
+    pitch: image.pitch,
+  });
 
   // Create scene.
   let scene = viewer.createScene({
@@ -38,17 +41,19 @@ for (let i = 0; i < data.length; i++) {
         // Switch to the new scene
         console.log(`hotspot links to scene ${hotspot.switchTo}`);
         console.log(scenes[hotspot.switchTo]);
-        
         scenes[hotspot.switchTo].switchTo();
+        currentView = scenes[hotspot.switchTo].view(); // Update the active view
       });
       // Create the hotspot
       scene.hotspotContainer().createHotspot(hotspotElement, hotspotPosition);
     }
   }
   scenes.push(scene);
+  if (i === 0) {
+    currentView = view; // Set the initial active view
+    scene.switchTo();
+  }
 }
-// Display scene.
-scenes[0].switchTo();
 
 // add a way to get the coordinates of a point for editing
 // the tour
@@ -70,12 +75,10 @@ document.getElementById("pano").addEventListener("mousedown", function (event) {
     // Convert to normalized coordinates (0 to 1)
     var x = relativeX / rect.width;
     var y = relativeY / rect.height;
-
     // Use the correct method: screenToCoordinates
-    var result = view.screenToCoordinates({ x: relativeX, y: relativeY });
+    var result = currentView.screenToCoordinates({ x: relativeX, y: relativeY });
 
     if (result) {
-      console.log("Yaw:", result.yaw, "Pitch:", result.pitch);
       alert(
         `Selected point is now in clipboard:\nYaw: ${result.yaw}, Pitch: ${result.pitch}`
       );
