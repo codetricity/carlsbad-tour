@@ -1,12 +1,37 @@
-# Carlsbad Cavern Tour with Marzipano
+# Review of Marzipano Viewer for Virtual Tour Software using Carlsbad Cavern Picture Data
 
 ![screenshot](readme_assets/screenshot.png)
 
 [live site](https://codetricity.github.io/carlsbad-tour/)
 
+[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  The open source viewer is used in [Marzipano tool], which is closed source.
+
+This assessment is for people thinking of building their
+own virtual tour software for use cases such as:
+
+* factory floor monitoring and optimization
+* retail space optimization
+* real estate sales
+* virtual experiences for parks, museums, hotels
+
+Intended input pictures are from a RICOH THETA X or Z1.
+This study prototypes manual placement of the hotspots.
+
+In the future, we will look at other features of RICOH THETA cameras which have built-in compass, gyroscope,
+and accelerometer. This data is stored in the image metadata.
+In Addition, the THETA X has GNSS support.
+
+This study uses individual pictures without metadata.
+The primary learning focus is on these concepts:
+
+* hotspot events and data format for hotspots
+* pitch and yaw of image and hotspots
+* basic Marzipano concepts such as geometry, limit, view, scene
+* UI interaction to get pitch and yaw information needed to build the tour
+
 ## data format
 
-There does not appear to be standard format for virtual tour
+There does not appear to be a standard format for virtual tour
 information on objects such as scenes, pitch, yaw, hotspots,
 and settings.
 
@@ -80,3 +105,16 @@ Service and released under the [Public Domain, No Copyright](https://creativecom
 Photostream
 
 <https://www.flickr.com/photos/193079646@N03/with/52283079899>
+
+## other tools
+
+* [panorama-to-cubemap](https://github.com/jaxry/panorama-to-cubemap)
+* [transform360](https://github.com/facebook/transform360)
+
+## future
+
+* replace equirectangular with cubemap and explain difference
+* revise data format
+* use Marzipano Tool again for ideas
+  * build a subset as open source
+* optimize image loading
