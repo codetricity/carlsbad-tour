@@ -3,6 +3,7 @@ const viewer = new Marzipano.Viewer(document.getElementById("pano"));
 
 // Create geometry.
 const geometry = new Marzipano.EquirectGeometry([{ width: 7296 }]);
+const limiter = Marzipano.RectilinearView.limit.traditional(4000, 100*Math.PI/180);
 
 let scenes = [];
 let currentView = null; // Track the active view
@@ -12,10 +13,11 @@ for (let i = 0; i < data.length; i++) {
   // Create source.
   let source = Marzipano.ImageUrlSource.fromString(`images/${image.filename}`);
   console.log(`image ${i} - setting yaw to ${image.yaw}`);
+
   let view = new Marzipano.RectilinearView({
     yaw: image.yaw,
     pitch: image.pitch,
-  });
+  }, limiter);
 
   // Create scene.
   let scene = viewer.createScene({
