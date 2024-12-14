@@ -124,6 +124,7 @@ Photostream
 * move from mouse long-press to editor mode button
 * use Marzipano Tool again for ideas
   * build a subset as open source
+* write data to downloadable file, possibly using something like Flask
 
 ### data standardization
 
