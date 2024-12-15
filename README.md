@@ -1,4 +1,4 @@
-# Review of Marzipano Viewer for Virtual Tour Software using Carlsbad Cavern Picture Data
+# Assessment of Marzipano Viewer for Virtual Tour Software using Carlsbad Cavern Picture Data
 
 ![screenshot](readme_assets/screenshot.png)
 
@@ -6,17 +6,18 @@
 
 If you want to build a virtual tour, do not use this repo.  Use the free [Marzipano tool](https://www.marzipano.net/tool/), which is closed source.
 
-I wanted to learn more about how to build virtual tour software.
-
-[Marzipano](https://github.com/google/marzipano) is a 360 image viewer.  
+This is useful if you want to learn more about how to build virtual tour software using 
+[Marzipano](https://github.com/google/marzipano) as the 360 image viewer.  
 
 This assessment is for people thinking of building their
-own virtual tour software for use cases such as:
+own software to manage 360 images in these use cases:
 
 * factory floor monitoring and optimization
 * retail space optimization
 * real estate sales
 * virtual experiences for parks, museums, hotels
+* natural disaster assessment
+* public infrasture assessment - sewer pipes, rain water drainage, power lines
 
 Intended input pictures are from a RICOH THETA X or Z1.
 This study prototypes manual placement of the hotspots.
