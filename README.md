@@ -34,15 +34,17 @@ The primary learning focus is on these concepts:
 * basic Marzipano concepts such as geometry, limit, view, scene
 * UI interaction to get pitch and yaw information needed to build the tour
 
-Marzipano is only the 360 image viewer.  However, as it is used
-in Marzipano Tool, it is a good reference to build your own
-virtual tour software.
+Although Marzipano is only the 360 image viewer, when assessed with Marzipano Tool,
+it is a good reference to build your own virtual tour software.
 
 ## data format
 
-There does not appear to be a standard format for virtual tour
+There is no standard format for virtual tour
 information on objects such as scenes, pitch, yaw, hotspots,
-and settings.
+and settings. Although we can use the Marzipano Tool data format
+as a defacto standard, I decided to experiment with my own format
+to simple tours easier to start with.  In particular, I'm using a unique ID
+for each scene. I am using the filename of the image in the data.
 
 The data I'm using looks like this:
 
