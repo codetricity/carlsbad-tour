@@ -177,3 +177,7 @@ Marzipano Tool is build on Marzipano.
 Run a web server locally such as `python -m http.server`
 
 ![marzipano tool local](readme_assets/marzipano-tool-local.png)
+
+## other virtual tours of Carlsbad Cavern for inspiration
+
+* The [Tour de Force tour of Carlsbad Caverns](https://www.tourdeforce360.com/carlsbad/) is excellent  
