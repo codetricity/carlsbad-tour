@@ -1,4 +1,4 @@
-# Assessment of Marzipano Viewer for Virtual Tour Software using Carlsbad Cavern Picture Data
+# Assessment of Marzipano Viewer for Virtual Tour Software Development
 
 ![screenshot](readme_assets/screenshot.png)
 
