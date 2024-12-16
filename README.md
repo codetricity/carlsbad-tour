@@ -122,9 +122,25 @@ Photostream
 * [panorama-to-cubemap](https://github.com/jaxry/panorama-to-cubemap)
 * [transform360](https://github.com/facebook/transform360)
 
-## future
+## Running Marzipano Tool Locally
 
-### performance optimization
+Marzipano Tool is built on top of Marzipano.
+
+Run a web server locally such as `python -m http.server`
+
+![marzipano tool local](readme_assets/marzipano-tool-local.png)
+
+## other virtual tours of Carlsbad Cavern for inspiration
+
+* The [Tour de Force tour of Carlsbad Caverns](https://www.tourdeforce360.com/carlsbad/) is excellent  
+
+##Future
+
+### Navigation
+
+The initial view is inconsistent depending on which arrow is pressed.  Make the initial view consistent.
+
+### Performance Optimization
 
 * replace equirectangular with cubemap and explain difference
 * multiresolution loading
@@ -170,14 +186,4 @@ Video CaMM data extraction.
 * [IMU Data Libraries](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md)
 * [RICOH THETA Z1 Firmware 3.01.1 - Adds Single-Fisheye, simultaneous recording of 2 videos, 50min video length](https://community.theta360.guide/t/ricoh-theta-z1-firmware-3-01-1-adds-single-fisheye-simultaneous-recording-of-2-videos-50min-video-length/9095?u=craig)
 
-## Running Marzipano Tool Locally
 
-Marzipano Tool is built on top of Marzipano.
-
-Run a web server locally such as `python -m http.server`
-
-![marzipano tool local](readme_assets/marzipano-tool-local.png)
-
-## other virtual tours of Carlsbad Cavern for inspiration
-
-* The [Tour de Force tour of Carlsbad Caverns](https://www.tourdeforce360.com/carlsbad/) is excellent  
