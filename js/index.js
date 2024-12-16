@@ -22,6 +22,7 @@ for (let i = 0; i < data.length; i++) {
     yaw: image.yaw,
     pitch: image.pitch,
   }, limiter);
+  view.filename = image.filename;
 
   // Create scene.
   let scene = viewer.createScene({
