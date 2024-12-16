@@ -19,7 +19,19 @@ This assessment is aimed at developers considering building custom software to m
 * natural disaster assessment
 * public infrasture assessment - sewer pipes, rain water drainage, power lines
 
-### Input Data
+## Learning Objectives
+
+Most virtual tour software have common technology concepts.
+
+* pitch and yaw of sphere and hotspots
+* data format of tour
+* performance - cubemap versus equirectangular, multi-resolution, compression
+* editing
+
+The best way to learn about these concepts is to build your
+own simplified virtual tour system.
+
+## Input Data
 
 The project assumes images are captured with a RICOH THETA X or Z1 camera. This prototype demonstrates manual placement of hotspots. Future iterations will explore leveraging the built-in compass, gyroscope, and accelerometer metadata from these cameras. Additionally, the THETA X offers GNSS support for geolocation data.
 
