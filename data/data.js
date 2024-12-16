@@ -97,13 +97,12 @@ export const data = [
     pitch: 0,
     hotspots: [
       {
-        yaw: 0, pitch: 0,
+        yaw: 2.8909606219375377, pitch: 0.26751223399159585,
         switchTo: 6,
         icon: "up.png",
       },
       {
-        yaw: 3.14,
-        pitch: 0.3,
+        yaw: 2.7423618163373025, pitch: 0.3575107244344444,
         switchTo: 4,
         icon: "down.png",
       },
