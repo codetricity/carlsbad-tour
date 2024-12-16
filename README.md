@@ -18,7 +18,7 @@ This assessment is aimed at developers considering building custom software to m
 * real estate sales
 * virtual experiences for parks, museums, hotels
 * natural disaster assessment
-* public infrasture assessment - sewer pipes, rain water drainage, power lines
+* public infrastructure assessment - sewer pipes, rain water drainage, power lines
 
 ## Learning Objectives
 
