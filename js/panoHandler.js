@@ -15,8 +15,10 @@ export function panoMousedownHandler(event, viewer, currentView) {
   
       if (result) {
         viewer.controls().disable();
+        console.log(`filename: ${currentView.filename}`);
+
         alert(
-          `Selected point is now in clipboard:\nYaw: ${result.yaw}, Pitch: ${result.pitch}`
+          `filename: ${currentView.filename}\nSelected point is now in clipboard:\nYaw: ${result.yaw}, Pitch: ${result.pitch}`
         );
         navigator.clipboard.writeText(
           `yaw: ${result.yaw}, pitch: ${result.pitch}`
