@@ -1,4 +1,4 @@
-# Assessment of Marzipano Viewer for Virtual Tour Software Development
+# Marzipano Viewer for Virtual Tour Software Development - Assessment
 
 ![screenshot](readme_assets/screenshot.png)
 
@@ -7,7 +7,7 @@
 If you're planning to build a virtual tour, this repository isn't intended for production use. Instead, consider using the free [Marzipano Tool](https://www.marzipano.net/tool/), which, while closed-source, offers an excellent starting point for creating virtual tours.
 
 This project, however, is valuable for anyone looking to learn more about how to build virtual tour, monitoring or analysis software using Marzipano as the 360° image viewer. In 2025, we anticipate that companies will likely group and link multiple RICOH THETA images together.  This grouping
-will likely expand beyond traditional tours for entertainment or real estate sales and include activities such as monitoring an industrial process.
+will likely expand beyond traditional tours for entertainment or real estate sales and include activities such as monitoring an industrial process or the condition of public utility infrastructure.
 
 ## Intended Use Cases
 
