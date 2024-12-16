@@ -4,7 +4,7 @@
 
 [live site](https://codetricity.github.io/carlsbad-tour/)
 
-If you're planning to build a virtual tour, this repository isn't intended for production use. Instead, consider using the free Marzipano tool, which, while closed-source, offers an excellent starting point for creating virtual tours.
+If you're planning to build a virtual tour, this repository isn't intended for production use. Instead, consider using the free [Marzipano Tool](https://www.marzipano.net/tool/), which, while closed-source, offers an excellent starting point for creating virtual tours.
 
 This project, however, is valuable for anyone looking to learn more about how to build virtual tour software using Marzipano as the 360° image viewer.
 
@@ -91,14 +91,14 @@ of the view.
 
 For the hotspot, the mouse is in the upper right corner.
 
-## images
+## Images
 
 Images are from a RICOH THETA Z1 taken by the National Park
 Service and released under the [Public Domain, No Copyright](https://creativecommons.org/publicdomain/mark/1.0/).
 
 [Photostream on Flickr](https://www.flickr.com/photos/193079646@N03/with/52283079899)
 
-## other tools
+## Other Tools
 
 * [panorama-to-cubemap](https://github.com/jaxry/panorama-to-cubemap)
 * [transform360](https://github.com/facebook/transform360)
@@ -166,5 +166,3 @@ Video CaMM data extraction.
 
 * [IMU Data Libraries](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md)
 * [RICOH THETA Z1 Firmware 3.01.1 - Adds Single-Fisheye, simultaneous recording of 2 videos, 50min video length](https://community.theta360.guide/t/ricoh-theta-z1-firmware-3-01-1-adds-single-fisheye-simultaneous-recording-of-2-videos-50min-video-length/9095?u=craig)
-
-
