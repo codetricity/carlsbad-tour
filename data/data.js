@@ -97,9 +97,81 @@ export const data = [
     pitch: 0,
     hotspots: [
       {
+        yaw: 0, pitch: 0,
+        switchTo: 6,
+        icon: "up.png",
+      },
+      {
         yaw: 3.14,
         pitch: 0.3,
         switchTo: 4,
+        icon: "down.png",
+      },
+    ],
+  },
+  {
+    filename: "carlsbad_6.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 0, pitch: 0,
+        switchTo: 7,
+        icon: "up.png",
+      },
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 5,
+        icon: "down.png",
+      },
+    ],
+  },
+  {
+    filename: "carlsbad_7.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 0, pitch: 0,
+        switchTo: 8,
+        icon: "up.png",
+      },
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 6,
+        icon: "down.png",
+      },
+    ],
+  },
+  {
+    filename: "carlsbad_8.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 0, pitch: 0,
+        switchTo: 9,
+        icon: "up.png",
+      },
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 7,
+        icon: "down.png",
+      },
+    ],
+  },
+  {
+    filename: "carlsbad_9.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 8,
         icon: "down.png",
       },
     ],
