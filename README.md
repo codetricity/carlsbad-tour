@@ -172,7 +172,7 @@ Video CaMM data extraction.
 
 ## Running Marzipano Tool Locally
 
-Marzipano Tool is build on Marzipano.
+Marzipano Tool is built on top of Marzipano.
 
 Run a web server locally such as `python -m http.server`
 
