@@ -9,6 +9,38 @@ If you're planning to build a virtual tour, this repository isn't intended for p
 This project, however, is valuable for anyone looking to learn more about how to build virtual tour, monitoring or analysis software using Marzipano as the 360° image viewer. In 2025, we anticipate that companies will likely group and link multiple RICOH THETA images together.  This grouping
 will likely expand beyond traditional tours for entertainment or real estate sales and include activities such as monitoring an industrial process or the condition of public utility infrastructure.
 
+## Tour Types
+
+There three types of virtual tours in wide use.
+
+### thumbnail
+
+![thumbnails](readme_assets/tour_types/thumbnail.jpeg)
+
+[tutorial](https://community.theta360.guide/t/tutorial-marzipano-switch-images-360-image-viewer/10109/5?u=craig)
+
+### floor plan
+
+![floorplan](readme_assets/tour_types/floorplan.png)
+
+In the floorplan tour, the audience clicks on a graphic that
+represents the space.
+
+### embedded arrow (this project)
+
+This is the _Google Street View_ or _Google Maps_ style of
+navigation between images.
+
+The arrow can be any type of image.  For example, it can be door.
+
+![embedded arrow](readme_assets/tour_types/embedded_arrow.jpeg)
+
+[tutorial](https://community.theta360.guide/t/tutorial-marzipano-hotspots-for-virtual-tours/10119)
+
+The arrow can also be made to clearly look like a button.
+
+![round button arrow](readme_assets/tour_types/button_arrow.png)
+
 ## Intended Use Cases
 
 This assessment is aimed at developers considering building custom software to manage 360° images for various applications, such as:
