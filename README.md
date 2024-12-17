@@ -39,7 +39,6 @@ The project assumes images are captured with a RICOH THETA X or Z1 camera. This 
 For this study, the images lack metadata, focusing instead on:
 
 * Hotspot events and data formats
-* Pitch and yaw for images and hotspots
 * Basic Marzipano concepts, such as geometry, limits, views, and scenes
 * User interaction for determining pitch and yaw values to build a tour
 
@@ -179,3 +178,110 @@ Video CaMM data extraction.
 
 * [IMU Data Libraries](https://github.com/ricohapi/theta-api-specs/blob/main/theta-metadata/README.md)
 * [RICOH THETA Z1 Firmware 3.01.1 - Adds Single-Fisheye, simultaneous recording of 2 videos, 50min video length](https://community.theta360.guide/t/ricoh-theta-z1-firmware-3-01-1-adds-single-fisheye-simultaneous-recording-of-2-videos-50min-video-length/9095?u=craig)
+
+---
+---
+
+## Extending the Tour
+
+Extending the tour will help with understanding virtual tour development concepts.
+
+### Add in New Image Files
+
+Click on [CarlsbadCavernsNPS photostream on Flickr](https://www.flickr.com/photos/193079646@N03/)
+
+![photostream](readme_assets/add_new_images/nps_photostream.png)
+
+Select image. Press download arrow.
+
+![download](readme_assets/add_new_images/download.png)
+
+Move file to `./images` and
+change name to something like `carlsbad_10.jpg`.
+
+## Add Data
+
+In `data/data.js`, go to the end of the file.
+
+Select last element of array.  Copy and paste it
+at the end of the array to create a new element.
+
+![last element](readme_assets/add_new_images/data.png)
+
+PLAN: write simple editor to make this easier.
+
+Change file name and hotspots.
+
+In the previous image, create a new hotspot to link to the
+new image.  The last to entries of the data file look like this:
+
+```javascript
+  {
+    filename: "carlsbad_9.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 0,
+        pitch: 0.3,
+        switchTo: 10,
+        icon: "up.png",
+      },
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 8,
+        icon: "down.png",
+      },
+    ],
+  },
+
+  {
+    filename: "carlsbad_10.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 9,
+        icon: "down.png",
+      },
+    ],
+  },
+];
+```
+
+### Adjust Location of Hotspot
+
+Initially, the hotspot is over the sign, difficult to read,
+and not in a location to lead to another image.
+
+![hotspot](readme_assets/add_new_images/hotspot.png)
+
+Press and hold a spot for 5 seconds.
+
+![alert box](readme_assets/add_new_images/alert.png)
+
+In the hotspot section of the image, delete the existing
+pitch and yaw.  The new pitch and yaw is stored in the clipboard.
+
+![delete pitch and yaw](readme_assets/add_new_images/pitch_yaw_delete.png)
+
+Paste the contents of the clipboard into the data file.
+Add a comma if necessary.
+
+![new pitch and yaw](readme_assets/add_new_images/pitch_yaw_new.png)
+
+Reload tour to test.
+
+![new hotspot](readme_assets/add_new_images/hotspot_new.png)
+
+## Celebrate and Plan Next Steps
+
+Congratulations on adding a new image.
+Hopefully, this motivates you to write a simple editor
+to save the data in JSON and modify the tour code to read
+in the JSON from a file.  Check out Marzipano tool for ideas.
+
+Have fun!

@@ -168,9 +168,28 @@ export const data = [
     pitch: 0,
     hotspots: [
       {
+        yaw: 0,
+        yaw: 0.891037504327354, pitch: 0.0671953186578218,
+        icon: "up.png",
+      },
+      {
         yaw: 3.14,
         pitch: 0.3,
         switchTo: 8,
+        icon: "down.png",
+      },
+    ],
+  },
+
+  {
+    filename: "carlsbad_10.jpg",
+    yaw: 0,
+    pitch: 0,
+    hotspots: [
+      {
+        yaw: 3.14,
+        pitch: 0.3,
+        switchTo: 9,
         icon: "down.png",
       },
     ],
